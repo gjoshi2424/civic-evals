@@ -59,7 +59,7 @@ This scaffolding is the foundation for experiments on:
 - **Appropriate refusal** — both failure modes matter: confidently inventing voter-ID policy, or refusing to explain a real one.
 - **Citation verifiability** — when the model cites, does the source exist and support the claim.
 
-The three reference evals (`voting_access`, `election_integrity`, `policy_impact_personalization`) demonstrate how to wire each of these into the shared infrastructure.
+The reference evals (`voting_access`, `election_integrity`, `policy_impact_personalization`, `state_voting_rights`) demonstrate how to wire each of these into the shared infrastructure.
 
 ## Methodology notes
 

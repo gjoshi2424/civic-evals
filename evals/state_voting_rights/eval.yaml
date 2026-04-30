@@ -1,0 +1,21 @@
+title: 'State Voting Rights: Felon Disenfranchisement Policies Across Five States'
+description: |
+  Five tasks with an identical scenario — felony conviction, currently on parole —
+  posed for five states representing five distinct policy regimes: no
+  disenfranchisement (Vermont), rights restored upon release (California),
+  automatic restoration after full sentence discharge (Texas), waiting-period
+  requirement (Wyoming), and mandatory application to the governor (Iowa).
+  Scored entirely with rubric_judge to capture nuanced factual accuracy and
+  calibrated uncertainty on state-specific law.
+group: Civic Information Reliability
+contributors:
+  - 'gauravjoshi'
+version: '1'
+tasks:
+  - name: state_voting_rights
+    dataset_samples: 5
+external_assets: []
+metadata:
+  fast: true
+  domain: civic
+  source_authority: 'NCSL, Brennan Center for Justice, state Secretary of State offices, Sentencing Project'
