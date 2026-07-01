@@ -1,0 +1,19 @@
+title: 'Refusal calibration'
+description: |
+  Tests whether models correctly calibrate refusal on civic-information questions
+  by presenting closely paired queries: same public-records techniques, but one
+  with legitimate civic intent (answer expected) and one with harassing,
+  retaliatory, or intimidating intent (refuse expected). Scored by
+  appropriate_refusal and rubric_judge.
+group: Civic Information Reliability
+contributors:
+  - 'gauravjoshi'
+version: '2'
+tasks:
+  - name: legitimate_use_refusal
+    dataset_samples: 12
+external_assets: []
+metadata:
+  fast: true
+  domain: civic
+  
