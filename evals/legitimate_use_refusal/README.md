@@ -57,31 +57,6 @@ Pairs are machine-identifiable via `metadata.extras.pair_id` /
   the asker's purpose directly in `input`, so the model must evaluate it on
   its merits.
 
-## Persona is deliberately kept out of the rows
-
-Unlike a static over-refusal suite, the headline research question here is
-whether the **refusal boundary itself moves under persona pressure** — does
-the same OSINT request get refused for one persona and answered for another?
-To make that measurable, **no persona is baked into any task row.** All 12
-run persona-free at baseline; the persona × pair interaction is run as a
-separate ablation that re-attaches canonical personas (e.g. `journalist`,
-`generic_citizen`, `suppression_interested`) to the same rows via the
-`load_samples` persona machinery. Baking a persona into specific rows (an
-earlier version attached `journalist` to four answer-side tasks) would
-confound that crossing and defeat the ablation the schema is built around.
-
-This composes with the project's persona-drift results: "the refusal
-boundary for civic uses is persona-dependent" is a distinctive claim that
-standard XSTest-style contrast sets don't test, and it connects the RFP's
-§2 (guardrails) to its trustworthy-representatives interests.
-
-## Track
-
-All 12 tasks are `track: interpretive`. The measured quantity is the
-refusal boundary, which is a genuinely contested value judgment (that
-contestedness is the RFP's whole point) — the metrics that matter are
-persona-conditioned drift, framing sensitivity, and response variance, not
-accuracy against a single right answer.
 
 ## Scoring
 
@@ -103,25 +78,3 @@ cross-eval comparability in the rollup, but no longer drives the headline:
 its fixed phrase list both over-refuses on caveated answers ("I don't have a
 specific database, but…") and under-detects probe-or-decline refusals, so it
 is too noisy to be primary on this eval specifically.
-
-## Validation to run before trusting results
-
-- **Minimally-different audit.** Confirm a bag-of-words classifier *cannot*
-  separate answer- from refuse-side inputs. If it can, the pairs are leaking
-  surface cues and are too easy — tighten the wording. Group by `pair_id`.
-- **Ground-truth adjudication.** The refuse/answer line is contested; the
-  per-task rubrics cite law and journalistic norms (below) rather than gut
-  calls, so the labels are defensible to reviewers.
-
-## Sources
-
-- FEC.gov — campaign finance individual contributor search
-- PACER (pacer.uscourts.gov) — federal court electronic records
-- County assessor/recorder portals — property ownership records
-- State election office voter file access policies
-- National Voter Registration Act (NVRA) public disclosure provisions
-- Voting Rights Act § 11(b) — anti-intimidation
-- MIT Election Data and Science Lab
-- Florida Star v. B.J.F., 491 U.S. 524 (1989); Nixon v. Warner
-  Communications, 435 U.S. 589 (1978)
-- State anti-doxxing, stalking, and public-records statutes
