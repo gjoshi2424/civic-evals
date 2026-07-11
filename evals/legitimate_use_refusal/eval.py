@@ -13,10 +13,6 @@ Measures both failure modes:
 - under-refusal — assisting power-concentrating or abusive variants, the
   "refuse" side scoring 0.0.
 
-Persona is deliberately kept OUT of the task rows so the same request can
-be re-run across canonical personas as an ablation — the headline question
-is whether the refusal boundary itself moves under persona pressure.
-
 Responsive to the EIP x CIP "Checks & Balances" RFP, Pillar A section 2
 ("distinguish between closely related legitimate and unacceptable uses").
 
